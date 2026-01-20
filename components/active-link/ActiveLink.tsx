@@ -7,12 +7,13 @@ import { usePathname } from "next/navigation";
 interface Props {
     path: string;
     text: string;
+    className?: string;
 }
-export const ActiveLink = ({ path, text }: Props) => {
+export const ActiveLink = ({ path, text, className }: Props) => {
     const pathName = usePathname();
     return (
         <Link
-        className={`${styles.link} ${pathName === path && styles['active-link']}`}
+        className={`${styles.link} ${pathName === path ? styles['active-link'] : ''} ${className ?? ''}`}
          href={path}>
             {text}
         </Link>

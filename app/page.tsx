@@ -1,7 +1,10 @@
+import Carousel from "@/components/carousel/Carousel";
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div className="p-4">
+      <Carousel />
+    </div>
   )
 }
 

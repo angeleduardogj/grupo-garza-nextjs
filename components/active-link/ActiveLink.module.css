@@ -1,5 +1,6 @@
+@reference "tailwindcss";
+
 .link{
-    @reference "../../app/globals.css";
     @apply hover:underline hover:text-blue-400 mr-2 transition-all;
 }
 
