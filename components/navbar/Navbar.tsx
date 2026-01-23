@@ -11,10 +11,12 @@ const navItems = [
      {
         href: "/nosotros",
         label: "Nosotros",
+        disabled: true,
     },
         {
         href: "/servicios",
         label: "Servicios",
+        disabled: true,
     },
     {
         href: "/proyectos",
@@ -23,6 +25,7 @@ const navItems = [
     {
         href: "/contacto",
         label: "Contacto",
+        disabled: true,
     },
    
 ]
@@ -46,7 +49,7 @@ const Navbar = () => {
 
           <div className="flex items-center gap-2 sm:gap-4 ml-4 mr-auto lg:order-2 lg:w-72 lg:justify-center lg:ml-0 lg:mr-0 lg:pr-0">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/1GRTMK4oaX/"
                 aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -69,7 +72,7 @@ const Navbar = () => {
                 </svg>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/grupo.garza?igsh=MXdmZ2xiZGthbjRp"
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -88,29 +91,6 @@ const Navbar = () => {
                     fill="currentColor"
                     fillRule="evenodd"
                     d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </a>
-              <a
-                href="https://twitter.com"
-                aria-label="Twitter"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-8 h-8 rounded-md text-[#313238] hover:text-orange-600 -mr-1"
-              >
-                <svg
-                  className="w-6 h-6"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M22 5.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.343 8.343 0 0 1-2.605.981A4.13 4.13 0 0 0 15.85 4a4.068 4.068 0 0 0-4.1 4.038c0 .31.035.618.105.919A11.705 11.705 0 0 1 3.4 4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 6.1 13.635a4.192 4.192 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 2 18.184 11.732 11.732 0 0 0 8.291 20 11.502 11.502 0 0 0 19.964 8.5c0-.177 0-.349-.012-.523A8.143 8.143 0 0 0 22 5.892Z"
                     clipRule="evenodd"
                   />
                 </svg>
@@ -154,12 +134,23 @@ const Navbar = () => {
           >
             <ul className="flex flex-col mt-4 font-semibold tracking-tight uppercase lg:flex-row lg:space-x-8 lg:mt-0">
               {navItems.map((item) => (
-                <li key={item.href}>
-                  <ActiveLink
-                    path={item.href}
-                    text={item.label}
-                    className="block py-2 pr-4 pl-3 text-[#313238] lg:p-0 hover:text-orange-600"
-                  />
+                <li key={item.href} className="relative">
+                  {item.disabled ? (
+                    <div className="flex flex-col lg:block">
+                        <span className="text-[9px] font-bold text-[#FF5E14] lg:absolute lg:-top-4 lg:left-1/2 lg:-translate-x-1/2 whitespace-nowrap mb-1 lg:mb-0 self-start lg:self-auto ml-3 lg:ml-0">
+                            En construcción
+                        </span>
+                        <span className="block py-2 pr-4 pl-3 text-gray-400 cursor-default lg:p-0">
+                            {item.label}
+                        </span>
+                    </div>
+                  ) : (
+                    <ActiveLink
+                      path={item.href}
+                      text={item.label}
+                      className="block py-2 pr-4 pl-3 text-[#313238] lg:p-0 hover:text-orange-600"
+                    />
+                  )}
                 </li>
               ))}
             </ul>

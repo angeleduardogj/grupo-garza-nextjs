@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Grupo garza",
+  title: "Grupo Garza",
   description: "Grupo garza es una empresa de servicios profesionales",
   openGraph: {
     images: [
