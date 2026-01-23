@@ -1,9 +1,13 @@
 import Carousel from "@/components/carousel/Carousel";
+import HomeSections from "@/components/sections/HomeSections";
 
 const HomePage = () => {
   return (
-    <div className="p-4">
+    <div className="">
       <Carousel />
+      <div className="">
+        <HomeSections />
+      </div>
     </div>
   )
 }

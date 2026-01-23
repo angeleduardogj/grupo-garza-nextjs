@@ -1,9 +1,9 @@
 @reference "tailwindcss";
 
 .link{
-    @apply hover:underline hover:text-blue-400 mr-2 transition-all;
+    @apply no-underline hover:no-underline hover:text-[#FF5E14] mr-2 transition-colors;
 }
 
 .active-link{
-    @apply text-blue-500;
+    @apply text-[#FF5E14];
 }

@@ -4,10 +4,10 @@ export const metadata: Metadata = {
   description: "Contacto Grupo garza",
 };
 
-const ContactoPage = () => {
+const ProyectosPage = () => {
   return (
-    <div>ContactoPage</div>
+    <div>ProyectosPage</div>
   )
 }
 
-export default ContactoPage
+export default ProyectosPage  
