@@ -11,7 +11,6 @@ const navItems = [
      {
         href: "/nosotros",
         label: "Nosotros",
-        disabled: true,
     },
         {
         href: "/servicios",

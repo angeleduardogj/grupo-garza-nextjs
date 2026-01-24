@@ -46,7 +46,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
             <div className="border-x border-red-600 bg-red-600/5"></div>
             <div className="border-x border-red-600 bg-red-600/5"></div>
           </div>
-        </div> */}
+        </div>  */}
         
         <Navbar />
         {children}
