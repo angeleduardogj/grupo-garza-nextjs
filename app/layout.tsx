@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning={true}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`} suppressHydrationWarning={true}>
         {/* Guías visuales de depuración (eliminar después) */}
         {/* <div className="fixed inset-0 pointer-events-none z-[9999] mx-auto max-w-screen-xl px-4 lg:px-0 opacity-50">
           <div className="h-full grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -49,7 +49,9 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
         </div>  */}
         
         <Navbar />
-        {children}
+        <main className="flex-grow flex flex-col">
+          {children}
+        </main>
         <FloatingWhatsApp />
         <Footer />
       </body>

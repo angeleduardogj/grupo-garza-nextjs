@@ -3,7 +3,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="bg-[#313238] text-white">
-      <div className="w-full max-w-screen-xl mx-auto px-4 lg:px-0 py-8">
+      <div className="w-full max-w-screen-xl mx-auto px-4 lg:px-0 py-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* Card 1: Horarios */}
           <div className="bg-[#313238] text-white rounded-md h-auto md:h-72 flex flex-col overflow-hidden">

@@ -15,7 +15,7 @@ const navItems = [
         {
         href: "/servicios",
         label: "Servicios",
-        disabled: true,
+        disabled: false,
     },
     {
         href: "/proyectos",
@@ -24,7 +24,7 @@ const navItems = [
     {
         href: "/contacto",
         label: "Contacto",
-        disabled: true,
+        disabled: false,
     },
    
 ]
@@ -37,9 +37,9 @@ const Navbar = () => {
       <nav className="bg-white px-0 h-24 relative z-50">
         <div className="flex flex-nowrap justify-between items-center mx-auto max-w-screen-xl h-full">
           <Link href="/" className="flex self-stretch">
-            <div className="relative flex items-center justify-center h-full bg-[#FF5E14] w-64 md:w-75.5 px-0 overflow-hidden">
+            <div className="relative flex items-center justify-center h-full bg-transparent w-64 md:w-75.5 px-0 overflow-hidden">
               <img
-                src="https://res.cloudinary.com/drotzbucj/image/upload/v1769139741/logo-white_jyxbi1.png"
+                src="https://res.cloudinary.com/drotzbucj/image/upload/v1769533849/logo-colores_ace9lk.png"
                 className="h-full w-full object-contain origin-center scale-[1.9] sm:scale-[2.1]"
                 alt="Logo"
               />
