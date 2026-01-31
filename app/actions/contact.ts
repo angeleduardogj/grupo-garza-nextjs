@@ -11,6 +11,18 @@ export async function sendEmail(prevState: any, formData: FormData) {
     return { message: 'Error de configuración del servidor (API Key faltante).', success: false };
   }
 
+  const contactEmail = process.env.CONTACT_EMAIL;
+  if (!contactEmail) {
+    console.error('ERROR: CONTACT_EMAIL no está definida en las variables de entorno.');
+    return { message: 'Error de configuración del servidor (Email faltante).', success: false };
+  }
+
+  const resendFromEmail = process.env.RESEND_FROM_EMAIL;
+  if (!resendFromEmail) {
+    console.error('ERROR: RESEND_FROM_EMAIL no está definida en las variables de entorno.');
+    return { message: 'Error de configuración del servidor (From Email faltante).', success: false };
+  }
+
   const nombre = formData.get('nombre') as string;
   const email = formData.get('email') as string;
   const telefono = formData.get('telefono') as string;
@@ -22,8 +34,8 @@ export async function sendEmail(prevState: any, formData: FormData) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Grupo Garza Web <onboarding@resend.dev>',
-      to: ['angeleduardogj@gmail.com'],
+      from: `Grupo Garza Web <${resendFromEmail}>`,
+      to: [contactEmail],
       subject: `Nuevo mensaje de ${nombre}`,
       html: `
         <!DOCTYPE html>
