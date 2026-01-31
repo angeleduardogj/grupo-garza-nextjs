@@ -17,7 +17,7 @@ const defaultItems: CarouselItem[] = [
     src: "https://res.cloudinary.com/drotzbucj/image/upload/v1768849187/Pag_indexFinal_02_vvv0uq.jpg",
     component: (
       <div className="max-w-2xl">
-        <h2 className="text-5xl md:text-7xl leading-none tracking-tight font-light italic">
+        <h2 className="text-3xl sm:text-5xl md:text-7xl leading-none tracking-tight font-light italic">
           <span className="block text-[#FF5E14] mb-2">EXPERTO</span>
           <span className="block text-[#313238] mb-2">EN CONSTRUCCIÓN</span>
           <span className="block text-[#FF5E14] mb-2">MANTENIMIENTO</span>
@@ -33,7 +33,7 @@ const defaultItems: CarouselItem[] = [
   { src: "https://res.cloudinary.com/drotzbucj/image/upload/v1768849187/Pag_indexFinal_06_whdcli.jpg",
     component: (
       <div className="max-w-2xl">
-        <h2 className="text-5xl md:text-7xl leading-none tracking-tight font-light italic">
+        <h2 className="text-3xl sm:text-5xl md:text-7xl leading-none tracking-tight font-light italic">
           <span className="block text-[#FF5E14] mb-2">EFICIENCIA</span>
           <span className="block text-[#313238] mb-2">PRODUCTIVIDAD</span>
           <span className="block text-[#FF5E14] mb-2">SERVICIO</span>
@@ -48,7 +48,7 @@ const defaultItems: CarouselItem[] = [
     src: "https://res.cloudinary.com/drotzbucj/image/upload/v1768849193/Pag_indexFinal_04_lsdiw7.jpg",
        component: (
       <div className="max-w-2xl">
-        <h2 className="text-5xl md:text-7xl leading-none tracking-tight font-light italic">
+        <h2 className="text-3xl sm:text-5xl md:text-7xl leading-none tracking-tight font-light italic">
           <span className="block text-[#FF5E14] mb-2">SOLUCIÓN</span>
           <span className="block text-[#313238] mb-2">A TUS</span>
           <span className="block text-[#FF5E14] mb-2">NECESIDADES</span>
@@ -62,7 +62,7 @@ const defaultItems: CarouselItem[] = [
       objectPosition: "50% 20%",
      component: (
       <div className="max-w-2xl">
-        <h2 className="text-5xl md:text-7xl leading-none tracking-tight font-light italic">
+        <h2 className="text-3xl sm:text-5xl md:text-7xl leading-none tracking-tight font-light italic">
           <span className="block text-[#FF5E14] mb-2">EXPERTO</span>
           <span className="block text-[#313238] mb-2">EN CONSTRUCCIÓN</span>
           <span className="block text-[#FF5E14] mb-2">MANTENIMIENTO</span>
@@ -74,7 +74,7 @@ const defaultItems: CarouselItem[] = [
     src: "https://res.cloudinary.com/drotzbucj/image/upload/v1768849189/Pag_indexFinal_03_rhgmct.jpg",
       component: (
       <div className="max-w-2xl">
-        <h2 className="text-5xl md:text-7xl leading-none tracking-tight font-light italic">
+        <h2 className="text-3xl sm:text-5xl md:text-7xl leading-none tracking-tight font-light italic">
           <span className="block text-[#FF5E14] mb-2">EFICIENCIA</span>
           <span className="block text-[#313238] mb-2">PRODUCTIVIDAD</span>
           <span className="block text-[#FF5E14] mb-2">SERVICIO</span>
@@ -87,7 +87,7 @@ const defaultItems: CarouselItem[] = [
   { src: "https://res.cloudinary.com/drotzbucj/image/upload/v1768848875/Pag_indexFinal_07_lymamy.jpg", 
     objectPosition: "50% 20%",   component: (
       <div className="max-w-2xl">
-        <h2 className="text-5xl md:text-7xl leading-none tracking-tight font-light italic">
+        <h2 className="text-3xl sm:text-5xl md:text-7xl leading-none tracking-tight font-light italic">
           <span className="block text-[#FF5E14] mb-2">SOLUCIÓN</span>
           <span className="block text-[#313238] mb-2">A TUS</span>
           <span className="block text-[#FF5E14] mb-2">NECESIDADES</span>
@@ -98,7 +98,7 @@ const defaultItems: CarouselItem[] = [
     objectPosition: "50% 20%",
    component: (
       <div className="max-w-2xl">
-        <h2 className="text-5xl md:text-7xl leading-none tracking-tight font-light italic">
+        <h2 className="text-3xl sm:text-5xl md:text-7xl leading-none tracking-tight font-light italic">
           <span className="block text-[#FF5E14] mb-2">EXPERTO</span>
           <span className="block text-[#313238] mb-2">EN CONSTRUCCIÓN</span>
           <span className="block text-[#FF5E14] mb-2">MANTENIMIENTO</span>
@@ -109,7 +109,7 @@ const defaultItems: CarouselItem[] = [
   { src: "https://res.cloudinary.com/drotzbucj/image/upload/v1768849191/Pag_indexFinal_09_kucw3r.jpg", 
     objectPosition: "50% 20%", component: (
       <div className="max-w-2xl">
-        <h2 className="text-5xl md:text-7xl leading-none tracking-tight font-light italic">
+        <h2 className="text-3xl sm:text-5xl md:text-7xl leading-none tracking-tight font-light italic">
           <span className="block text-[#FF5E14] mb-2">EFICIENCIA</span>
           <span className="block text-[#313238] mb-2">PRODUCTIVIDAD</span>
           <span className="block text-[#FF5E14] mb-2">SERVICIO</span>
@@ -159,12 +159,12 @@ const Carousel = ({ items = defaultItems, autoPlay = true, intervalMs = 4000, he
   const getAlignmentClasses = (alignment?: 'left' | 'center' | 'right') => {
     switch (alignment) {
       case 'left':
-        return 'items-start text-left pl-10 md:pl-20';
+        return 'items-start text-left pl-16 md:pl-20';
       case 'right':
-        return 'items-end text-right pr-10 md:pr-20';
+        return 'items-end text-right pr-16 md:pr-20';
       case 'center':
       default:
-        return 'items-center text-center px-10';
+        return 'items-center text-center px-16';
     }
   };
 
@@ -196,8 +196,8 @@ const Carousel = ({ items = defaultItems, autoPlay = true, intervalMs = 4000, he
                     item.component
                   ) : (
                     <div className="max-w-3xl">
-                      {item.title && <h2 className="text-white text-4xl md:text-6xl font-bold mb-4 drop-shadow-md">{item.title}</h2>}
-                      {item.description && <p className="text-white text-xl md:text-2xl drop-shadow-md">{item.description}</p>}
+                      {item.title && <h2 className="text-white text-2xl sm:text-4xl md:text-6xl font-bold mb-4 drop-shadow-md">{item.title}</h2>}
+                      {item.description && <p className="text-white text-lg sm:text-xl md:text-2xl drop-shadow-md">{item.description}</p>}
                     </div>
                   )}
                 </div>
