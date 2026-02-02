@@ -16,27 +16,57 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Grupo Garza",
-  description: "Grupo garza es una empresa de servicios profesionales",
+  metadataBase: new URL('https://www.grupogarza.com.mx'), // TODO: Actualizar dominio
+  title: {
+    default: "Grupo Garza | Servicios Profesionales de Construcción y Mantenimiento",
+    template: "%s | Grupo Garza"
+  },
+  description: "Grupo Garza es una empresa líder en servicios de construcción, mantenimiento industrial, comercial e ingeniería. Soluciones integrales para tus proyectos.",
+  keywords: ["construcción", "mantenimiento", "ingeniería", "industrial", "comercial", "servicios profesionales", "Grupo Garza"],
+  authors: [{ name: "Grupo Garza" }],
+  creator: "Grupo Garza",
   openGraph: {
+    type: 'website',
+    locale: 'es_MX',
+    url: 'https://www.grupogarza.com.mx',
+    siteName: 'Grupo Garza',
+    title: 'Grupo Garza | Servicios Profesionales',
+    description: 'Soluciones integrales en construcción y mantenimiento.',
     images: [
       {
         url: "https://res.cloudinary.com/drotzbucj/image/upload/v1769150013/miniatura_wvwqum.png",
         width: 1200,
         height: 630,
-        alt: "Grupo Garza",
+        alt: "Grupo Garza - Servicios Profesionales",
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Grupo Garza',
+    description: 'Soluciones integrales en construcción y mantenimiento.',
+    images: ["https://res.cloudinary.com/drotzbucj/image/upload/v1769150013/miniatura_wvwqum.png"],
   },
   icons: {
     icon: "https://res.cloudinary.com/drotzbucj/image/upload/v1769150013/miniatura_wvwqum.png",
     apple: "https://res.cloudinary.com/drotzbucj/image/upload/v1769150013/miniatura_wvwqum.png",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`} suppressHydrationWarning={true}>
         {/* Guías visuales de depuración (eliminar después) */}
         {/* <div className="fixed inset-0 pointer-events-none z-[9999] mx-auto max-w-screen-xl px-4 lg:px-0 opacity-50">
