@@ -1,6 +1,7 @@
 'use client'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ActiveLink } from "../active-link/ActiveLink"
 
 const navItems = [
@@ -31,12 +32,23 @@ const navItems = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
   const toggle = () => setOpen((v) => !v);
   return (
     <header>
-      <nav className="bg-white px-0 h-24 relative z-50">
+      <nav className="px-0 h-24 relative z-50">
+        <div className="absolute inset-0 bg-white -z-10 border-b border-gray-100/50" />
         <div className="flex flex-nowrap justify-between items-center mx-auto max-w-screen-xl h-full">
-          <Link href="/" className="flex self-stretch">
+          <Link 
+            href="/" 
+            className="flex self-stretch"
+            onClick={() => setOpen(false)}
+          >
             <div className="relative flex items-center justify-center h-full bg-transparent w-64 md:w-75.5 px-0 overflow-hidden">
               <img
                 src="https://res.cloudinary.com/drotzbucj/image/upload/v1769533849/logo-colores_ace9lk.png"
@@ -127,7 +139,7 @@ const Navbar = () => {
           <div
             id="mobile-menu-2"
             className={`justify-between items-center w-full lg:flex lg:w-auto lg:order-1 
-              absolute top-0 left-0 bg-white -z-10 pt-24 px-4 pb-4 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-0 lg:h-full lg:bg-transparent lg:p-0 lg:shadow-none lg:border-none lg:z-auto
+              absolute top-0 left-0 bg-white -z-20 pt-24 px-4 pb-4 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-0 lg:h-full lg:bg-transparent lg:p-0 lg:shadow-none lg:border-none lg:z-auto
               transition-transform duration-500 ease-in-out
               ${open ? "translate-y-0" : "-translate-y-full lg:translate-y-0"}`}
           >
@@ -148,6 +160,7 @@ const Navbar = () => {
                       path={item.href}
                       text={item.label}
                       className="block py-2 pr-4 pl-3 text-[#313238] lg:p-0 hover:text-orange-600"
+                      onClick={() => setOpen(false)}
                     />
                   )}
                 </li>

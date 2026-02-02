@@ -492,33 +492,36 @@ export const ProjectTabs = () => {
     <div className="w-full max-w-screen-xl mx-auto px-4 lg:px-0 py-8">
       {/* Tabs */}
       <div className="text-base font-medium text-center text-gray-500 border-b border-gray-200 mb-8">
-        <ul className="flex flex-wrap -mb-px">
+        <ul className="flex flex-wrap lg:flex-nowrap justify-center -mb-px w-full">
           {projectData.map((tab, index) => (
-            <li key={index} className="me-2">
+            <li key={index} className="basis-[30%] lg:basis-auto min-w-0">
               <button
                 onClick={() => setActiveTab(index)}
-                className={`inline-block p-4 border-b-2 rounded-t-lg transition-colors duration-300 font-semibold tracking-tight uppercase ${
+                className={`inline-block w-full p-2 sm:p-4 border-b-2 rounded-t-lg transition-colors duration-300 font-semibold tracking-tight uppercase truncate ${
                   activeTab === index
                     ? 'text-orange-600 border-orange-600 active'
                     : 'text-[#313238] border-transparent hover:text-orange-600 hover:border-orange-600'
                 }`}
               >
-                {tab.titulo}
+                <span className="block truncate">{tab.titulo}</span>
               </button>
             </li>
           ))}
-          {/* Example disabled tab from user snippet, kept for reference if needed, otherwise removed for clean data-driven UI */}
         </ul>
       </div>
 
       {/* Content */}
-      <div className="space-y-12">
+      <div className="flex flex-col gap-12">
         {projectData[activeTab].proyectos.map((proyecto, pIndex) => (
-          <ProjectCard
-            key={pIndex}
-            proyecto={proyecto}
-            openLightbox={openLightbox}
-          />
+          <div 
+            key={pIndex} 
+            className="w-full"
+          >
+            <ProjectCard
+              proyecto={proyecto}
+              openLightbox={openLightbox}
+            />
+          </div>
         ))}
       </div>
 

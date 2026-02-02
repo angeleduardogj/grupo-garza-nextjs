@@ -8,11 +8,13 @@ interface Props {
     path: string;
     text: string;
     className?: string;
+    onClick?: () => void;
 }
-export const ActiveLink = ({ path, text, className }: Props) => {
+export const ActiveLink = ({ path, text, className, onClick }: Props) => {
     const pathName = usePathname();
     return (
         <Link
+        onClick={onClick}
         className={`${styles.link} ${pathName === path ? styles['active-link'] : ''} ${className ?? ''}`}
          href={path}>
             {text}
